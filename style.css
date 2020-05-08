@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    padding: 0 80px;
+    background-color: white;
+    justify-content: space-between; /* Untuk membuat menu meberikan jarak ke sekelilingnya (atas, bawah, kiri, kanan) */
+    height: 70px;
+    align-items: center;  /* Untuk membuat menu menjadi di tengah (atas-bawah) */
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-evenly; /* Untuk membuat item menu menjaga jarak antara kiri dan kanan */
+}
+
+nav ul li a{
+    color: #070099;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+nav ul li a:hover{
+    opacity: 1;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo h3 a{
+    margin-left: 20px;
+    color: #070099;
+}
+
+/* Hamburger Menu */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #070099;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Jumbotron */
+.container-one{
+    background-image: linear-gradient(to right top, #070099, #0d16ac, #1027be, #1036d2, #0d45e5, #0056ef, #0066f7, #0075ff, #0087ff, #0097ff, #0ea6ff, #40b4ff);
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.image{
+    min-width: 40%;
+    display: flex;
+}
+
+
+.image img{
+    max-width: 100%;
+    margin: auto;
+}
+
+.message{
+    display: flex;
+    min-width: 40%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message h1{
+    color: yellow;
+    line-height: 40px;
+}
+
+.message h3{
+    color: white;
+    line-height: 40px;
+}
+
+.message p{
+    margin-top: 10px;
+    line-height: 25px;
+    color: white;
+    opacity: 0.7;
+}
+
+.btn{
+    margin-top: 15px;
+    background-color: white;
+    padding: 9px 18px;
+    color: #070099;
+    display: inline-block;
+    opacity: 0.8;
+    border-radius: 35px;
+    font-size: 14px;
+}
+
+.btn:hover{
+    background-color: yellow;
+    color: #070099;
+    border-radius: 35px;
+}
+
+/* Member A14 */
+.container-two{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #070099;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+
+.lesson{
+    width: 19%;
+    text-align: center;
+}
+
+.lesson-icon img{
+    box-sizing: border-box;
+    padding-top: 10px;
+    display: flex;
+    margin: auto;
+}
+
+.lesson-icon p{
+    margin-top: 20px;
+}
+
+.txt-contents{
+    line-height: 30px;
+    opacity: 0.7;
+}
+
+/* Social Media */
+.container-three{
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 10px; 
+    align-items: center;
+    background-color: #d5d9d8;
+}
+
+.icons-right img {
+    padding-left: 20px;
+}
+
+.container-four{
+    display: flex;
+    justify-content: center;
+    background-color: #aeb8ba;
+}
+
+.contain{
+    box-sizing: border-box;
+    width: 30%;
+    padding: 20px ;
+}
+
+.contain h3{
+    margin: 10px 0;  
+    color: #070099;
+    opacity: 0.8;
+}
+
+.contain p{
+    line-height: 25px; 
+    opacity: 0.7;
+}
+
+.contain a p{
+    color: black;
+}
+
+/* Credit */
+.credit{
+    background-color: #61777e;
+}
+
+.credit p{
+    text-align: center;
+    padding: 10px;
+    color: white;
+    opacity: 0.7;
+}
+
+/* Responsive Tablet */
+@media screen and (max-width: 768px) {
+
+    /* Navbar */
+    nav ul{
+        width: 50%;
+    }
+
+    /* Jumbotron */
+    .container-one{
+        flex-direction: column;
+    }
+
+    .message{
+        width: 100%;
+    }
+    
+    .image img{
+        max-width: 100%;
+    }
+
+    /* Team */
+    .lesson{
+        width: 100%;
+    }
+
+    /* Footer */
+    .container-four{
+        flex-direction: column;
+    }
+
+    .contain{
+        width: 100%;
+        padding: 10px ;
+    }
+
+    .contain h3{
+        margin: 5px 0;  
+    }
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 576px) {
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    nav ul{
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        width: 80%;
+        top: 0;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        z-index: -1;
+        background-color: white;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+        margin-top: 70px;
+    }
+
+    nav ul.slide{
+        transform: translateX(0);
+        opacity: 1;
+        margin-top: 70px;
+        z-index: 2;
+    }
+
+}
